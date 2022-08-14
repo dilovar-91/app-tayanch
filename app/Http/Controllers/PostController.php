@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index(): JsonResponse
     {
-        $posts = Post::orderby('created_at', 'DESC')->get();
+        $posts = Post::orderby('created_at', 'DESC')->where('archived', 0)->whereNull('deleted_at')->get();
         return response()->json($posts);
     }
 }
