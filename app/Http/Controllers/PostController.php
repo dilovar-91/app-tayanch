@@ -13,4 +13,12 @@ class PostController extends Controller
         $posts = Post::with(['category', 'pictures'])->orderby('created_at', 'DESC')->where('archived', 0)->whereNull('deleted_at')->get();
         return response()->json($posts);
     }
+
+
+    public function detail($id)
+    {
+
+        $post = Post::with(['category', 'pictures'])->where('archived', 0)->whereNull('deleted_at')->findOrFail($id);
+        return response()->json($post);
+    }
 }

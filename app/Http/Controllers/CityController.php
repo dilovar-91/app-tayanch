@@ -10,7 +10,7 @@ class CityController extends Controller
 {
     public function index(): JsonResponse
     {
-        $items = City::whereNotNull('ru')->get();
+        $items = City::where('country_code', 'ru')->get();
         return response()->json($items);
     }
 }

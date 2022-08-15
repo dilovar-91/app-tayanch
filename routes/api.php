@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{id}', [PostController::class, 'detail']);
 Route::get('/cities', [CityController::class, 'index']);
 
 

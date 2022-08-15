@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
-    protected $casts = ['name'=>'array'];
+    protected $casts = ['name'=>'array', 'description'=>'array'];
 }
