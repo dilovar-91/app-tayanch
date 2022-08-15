@@ -11,4 +11,5 @@ class Category extends Model
     protected $hidden = ['seo_title','seo_description','seo_keywords'];
 
     protected $casts = ['name'=>'array', 'description'=>'array'];
+
 }
